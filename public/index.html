@@ -12,8 +12,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -25,16 +26,19 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span id="logo">tweeter</span>
-      <div id="nav-text">
-        <span id="text"><b>Write</b> a new tweet</span>
-        <span><i class="fa-solid fa-angles-down" style="color: #ea2c1d;"></i></span>
+      <span>tweeter</span>
+      <div class="nav-text">
+        <span><b>Write</b> a new tweet</span>
+        <i class="fa-solid fa-angles-down" style="color: #ea2c1d;"></i>
       </div>
     </nav>
+    <!-- Header -->
+    <header>
+      <img src="/images/profile-hex.png"> 
+      <h2>Your Name</h2>
+    </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
-      <h2>This is the main page content!</h2>
-    </main>
+    <main class="container"></main>
   </body>
 </html>
