@@ -1,0 +1,36 @@
+/* stylesheet for new tweets in main */
+
+form {
+  display: flex;
+  flex-direction: column; 
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: 'Bungee', cursive;
+  margin-top: 5px;
+}
+
+button {
+  color: #FFFFFF;
+  background-color: #4056A1;
+  border: none;
+  padding: 5px 15px;
+}
+
+textarea {
+  background-color: #f4f1ec;
+  border: none;
+  border-bottom: solid #545149 5px;
+  width: 100%;
+  resize: none;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+label {
+  font-weight: bold;
+  font-size: larger;
+}
