@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
     
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -42,6 +43,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <!-- new tweets -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets">
@@ -53,6 +55,22 @@
           </div>
         </form>
       </section>
+      <!-- posted tweets -->
+      <article class="tweet">
+        <header>
+          <span class="name">Brady Blanchard</span>
+          <span class="username">@BradyB</span>
+        </header>
+        <p>Hello World!</p>
+        <footer>
+          <span>10 days ago</span>
+          <span>
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </span>
+        </footer>
+      </article>
     </main>
   </body>
 </html>

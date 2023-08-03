@@ -1,0 +1,56 @@
+/* stylesheet for formatting tweets */
+
+article.tweet {
+  border: solid #545149 5px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+article.tweet header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: auto;
+  padding: 10px 0px;
+}
+
+article.tweet p {
+  border-bottom: solid #545149 5px;
+  width: 100%;
+  padding: 20px;
+  margin: 0px;
+  font-weight: bold;
+}
+
+article.tweet footer {
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+  padding: 10px 0px;
+  font-size: medium;
+  font-weight: bold;
+}
+
+article.tweet i {
+  padding-left: 10px;
+  color: #4056A1;
+}
+
+article.tweet i:hover {
+  color: #c7982c;
+}
+
+article.tweet span {
+  padding: 0px 20px
+}
+
+.username {
+  color: #c5cbe3;
+  font-weight: bold;
+}
+
+article.tweet:hover {
+  box-shadow: 10px 10px #c9cbdf;
+}

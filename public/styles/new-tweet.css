@@ -1,4 +1,4 @@
-/* stylesheet for new tweets in main */
+/* stylesheet for new tweets in the main */
 
 form {
   display: flex;
@@ -10,7 +10,7 @@ form div {
   justify-content: space-between;
   align-items: baseline;
   font-family: 'Bungee', cursive;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 button {
