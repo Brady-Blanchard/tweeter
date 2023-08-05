@@ -12,6 +12,7 @@ article.tweet header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   height: auto;
   padding: 10px 0px;
 }
@@ -53,4 +54,10 @@ article.tweet span {
 
 article.tweet:hover {
   box-shadow: 10px 10px #c9cbdf;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
 }
