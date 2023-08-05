@@ -3,8 +3,9 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
+// lets the DOM load before running JS
 $(document).ready(function() {
+  // function that creates a new tweet element based on a tweet object
   const createTweetElement = function(tweetObj) {
     const name = tweetObj.user.name;
     const avatar = tweetObj.user.avatars;
@@ -27,7 +28,7 @@ $(document).ready(function() {
               </footer>
             </article>`
   };
-
+  // function that renders tweets using by looping over the tweets array
   const renderTweets = function(tweetsArr) {
     let $tweet = '';
     for (const tweet of tweetsArr) {
@@ -36,7 +37,7 @@ $(document).ready(function() {
     return $('.container').append($tweet);
   };
 
-  // fake data
+  // fake tweets array data
   const data = [
     {
       "user": {
@@ -63,4 +64,21 @@ $(document).ready(function() {
   ]
 
   renderTweets(data);
+
+  // event listener for new tweets form
+  $("form").on("submit", function(event) {
+    event.preventDefault();
+      const serializedData = $(this).serialize();
+      $.ajax({
+        type: "POST",
+        url: "/tweets",
+        data: serializedData,
+        success: function() {
+          console.log(serializedData)
+        },
+        error: function() {
+
+        }
+      })
+  })
 });
