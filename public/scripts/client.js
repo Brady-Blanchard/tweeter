@@ -13,7 +13,7 @@ $(document).ready(function() {
     const avatar = tweetObj.user.avatars;
     const handle = tweetObj.user.handle;
     const content = tweetObj.content.text;
-    const time = tweetObj.created_at;
+    const time = timeago.format(tweetObj.created_at);
     return  `<article class="tweet">
               <header>
                 <span class="name"><img src=${avatar}>${name}</span>
@@ -30,7 +30,7 @@ $(document).ready(function() {
               </footer>
             </article>`
   };
-  // function that renders tweets using by looping over the tweets array
+  // function that renders tweets by looping over the tweets array
   const renderTweets = function(tweetsArr) {
     let $tweet = '';
     for (const tweet of tweetsArr) {
@@ -48,10 +48,10 @@ $(document).ready(function() {
         method: "POST",
         data: serializedData,
         success: function() {
-          console.log(serializedData)
+          console.log(serializedData);
         },
-        error: function() {
-
+        error: function(err) {
+          console.log(err);
         }
       })
   })
@@ -66,7 +66,7 @@ $(document).ready(function() {
         console.log(res)
       },
       error: function(err) {
-
+        console.log(err);
       }
     })
   }
