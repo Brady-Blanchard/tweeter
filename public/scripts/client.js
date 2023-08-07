@@ -42,7 +42,17 @@ $(document).ready(function() {
   // event listener for new tweets form
   $("form").on("submit", function(event) {
     event.preventDefault();
+      // variable for storing serialized text from the form
       const serializedData = $(this).serialize();
+      // error handling
+      if ($("#tweet-text").val() === "") {
+        alert("Please enter a tweet before submitting.");
+        return
+      } else if ($(".counter").val() <= 0) {
+        alert("Tweet is over character limit.")
+        return
+      }
+      // fetch request using ajax
       $.ajax({
         url: "/tweets",
         method: "POST",
