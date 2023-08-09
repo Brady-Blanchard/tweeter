@@ -1,8 +1,16 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, single-page Twitter clone now known as X that allows you to post tweets to the main page.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+## Final Product
+
+### Main page
+<img src="docs/tweeter-1.png" alt="Screenshot of the main page under 1024px" width="500"/>
+<img src="docs/tweeter-2.png" alt="Screenshot of the main page over 1024px" width="600"/>
+
+### Errors
+<img src="docs/error-1.png" alt="Screenshot of an error message indicating that the tweet is over the character limit" width="600"/>
+<img src="docs/error-2.png" alt="Screenshot of an error message indicating that you must enter a tweet before submitting" width="600"/>
 
 ## Getting Started
 
