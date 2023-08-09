@@ -33,3 +33,16 @@ body {
   width: 90%;
   background-color: #f4f1ec;
  }
+
+/* Responsive design for screens 1024px and up */
+
+@media only screen and (min-width:1024px) {
+  body {
+    flex-direction: row;
+    padding-top: 120px;
+  }
+
+  main {
+    width: 60%;
+  }
+ }

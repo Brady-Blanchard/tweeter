@@ -4,7 +4,6 @@ nav {
   display: flex;
   width: 100%;
   height: 120px;
-  background-color: #4056A1;
   color: #FFFFFF;
   justify-content: space-between;
   align-items: center;
@@ -23,4 +22,12 @@ nav>span {
   flex-direction: column;
   align-items: center;
   padding-top: 1em;
+}
+
+/* Responsive design for screens 1024px and up */
+
+@media only screen and (min-width:1024px) {
+  nav {
+    background-color: #4056A1;
+  }
 }
