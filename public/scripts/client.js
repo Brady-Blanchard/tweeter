@@ -46,12 +46,13 @@ $(document).ready(function() {
       const serializedData = $(this).serialize();
       // error handling
       if ($("#tweet-text").val() === "") {
-        alert("Please enter a tweet before submitting.");
+        $("#error").html("⚠ Please enter a tweet before submitting ⚠").slideDown();
         return
       } else if ($(".counter").val() < 0) {
-        alert("Tweet is over character limit.")
+        $("#error").html("⚠ Tweet is over character limit ⚠").slideDown();
         return
       }
+      $("#error").slideUp();
       // fetch request using ajax
       $.ajax({
         url: "/tweets",

@@ -61,3 +61,12 @@ article.tweet:hover {
   align-items: center;
   column-gap: 10px;
 }
+
+#error {
+  display: none;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(192, 0, 0);
+  border: solid 5px rgb(192, 0, 0);
+
+}
