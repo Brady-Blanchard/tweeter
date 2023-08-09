@@ -28,7 +28,7 @@ $(document).ready(function() {
                   <i class="fa-solid fa-heart"></i>
                 </span>
               </footer>
-            </article>`
+            </article>`;
   };
   // function that renders tweets by looping over the tweets array
   const renderTweets = function(tweetsArr) {
@@ -42,31 +42,31 @@ $(document).ready(function() {
   // event listener for new tweets form
   $("form").on("submit", function(event) {
     event.preventDefault();
-      // variable for storing serialized text from the form
-      const serializedData = $(this).serialize();
-      // error handling
-      if ($("#tweet-text").val() === "") {
-        $("#error").html("⚠ Please enter a tweet before submitting ⚠").slideDown();
-        return
-      } else if ($(".counter").val() < 0) {
-        $("#error").html("⚠ Tweet is over character limit ⚠").slideDown();
-        return
+    // variable for storing serialized text from the form
+    const serializedData = $(this).serialize();
+    // error handling
+    if ($("#tweet-text").val() === "") {
+      $("#error").html("⚠ Please enter a tweet before submitting ⚠").slideDown();
+      return;
+    } else if ($(".counter").val() < 0) {
+      $("#error").html("⚠ Tweet is over character limit ⚠").slideDown();
+      return;
+    }
+    $("#error").slideUp();
+    // fetch request using ajax
+    $.ajax({
+      url: "/tweets",
+      method: "POST",
+      data: serializedData,
+      success: function() {
+        console.log(serializedData);
+        loadTweets();
+      },
+      error: function(err) {
+        console.log(err);
       }
-      $("#error").slideUp();
-      // fetch request using ajax
-      $.ajax({
-        url: "/tweets",
-        method: "POST",
-        data: serializedData,
-        success: function() {
-          console.log(serializedData);
-          loadTweets();
-        },
-        error: function(err) {
-          console.log(err);
-        }
-      })
-  })
+    });
+  });
 
   // function for fetching tweets from the http://localhost:8080/tweets page
   const loadTweets = function() {
@@ -75,13 +75,13 @@ $(document).ready(function() {
       method: "GET",
       success: function(res) {
         renderTweets(res);
-        console.log(res)
+        console.log(res);
       },
       error: function(err) {
         console.log(err);
       }
-    })
-  }
+    });
+  };
 
   loadTweets();
 });
