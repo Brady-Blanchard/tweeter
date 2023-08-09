@@ -19,7 +19,7 @@ $(document).ready(function() {
                 <span class="name"><img src=${avatar}>${name}</span>
                 <span class="username">${handle}</span>
               </header>
-              <p>${content}</p>
+              <p>${$('<div>').text(content).html()}</p>
               <footer>
                 <span>${time}</span>
                 <span>
@@ -34,9 +34,9 @@ $(document).ready(function() {
   const renderTweets = function(tweetsArr) {
     let $tweet = '';
     for (const tweet of tweetsArr) {
-      $tweet += createTweetElement(tweet);
+      $tweet = createTweetElement(tweet) + $tweet;
     }
-    return $('.container').append($tweet);
+    return $('#tweets').empty().append($tweet);
   };
 
   // event listener for new tweets form
@@ -48,7 +48,7 @@ $(document).ready(function() {
       if ($("#tweet-text").val() === "") {
         alert("Please enter a tweet before submitting.");
         return
-      } else if ($(".counter").val() <= 0) {
+      } else if ($(".counter").val() < 0) {
         alert("Tweet is over character limit.")
         return
       }
@@ -59,6 +59,7 @@ $(document).ready(function() {
         data: serializedData,
         success: function() {
           console.log(serializedData);
+          loadTweets();
         },
         error: function(err) {
           console.log(err);
