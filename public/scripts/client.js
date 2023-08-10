@@ -45,21 +45,25 @@ $(document).ready(function() {
     // variable for storing serialized text from the form
     const serializedData = $(this).serialize();
     // error handling
-    if ($("#tweet-text").val() === "") {
+    if ($("#tweet-text").val().trim() === "") {
       $("#error").html("⚠ Please enter a tweet before submitting ⚠").slideDown();
+      $("#tweet-text").val("");
+      $(".counter").val(140);
       return;
     } else if ($(".counter").val() < 0) {
       $("#error").html("⚠ Tweet is over character limit ⚠").slideDown();
       return;
     }
     $("#error").slideUp();
+    // resets textbox and counter
+    $("#tweet-text").val("");
+    $(".counter").val(140);
     // fetch request using ajax
     $.ajax({
       url: "/tweets",
       method: "POST",
       data: serializedData,
       success: function() {
-        console.log(serializedData);
         loadTweets();
       },
       error: function(err) {
@@ -75,7 +79,6 @@ $(document).ready(function() {
       method: "GET",
       success: function(res) {
         renderTweets(res);
-        console.log(res);
       },
       error: function(err) {
         console.log(err);
