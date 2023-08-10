@@ -54,8 +54,8 @@ $(document).ready(function() {
       $("#error").html("⚠ Tweet is over character limit ⚠").slideDown();
       return;
     }
+    // resets error message, textbox, and counter
     $("#error").slideUp();
-    // resets textbox and counter
     $("#tweet-text").val("");
     $(".counter").val(140);
     // fetch request using ajax
